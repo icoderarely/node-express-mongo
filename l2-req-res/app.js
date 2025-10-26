@@ -5,7 +5,19 @@ function requestHandler(req, res) {
   res.setHeader("Content-Type", "text/html");
   res.write("<html>");
   res.write("<head><title>My First Page</title></head>");
-  res.write("<body><h1>Hello from my Node.js Server!</h1></body>");
+
+  // routing
+  if (req.url === "/") {
+    res.write("<body><h1>Welcome to the Home Page!</h1></body>");
+  } else if (req.url.toLowerCase() === "/about") {
+    res.write("<body><h1>About Us</h1><p>This is the about page.</p></body>");
+  } else {
+    res.write(
+      "<body><h1>404 Not Found</h1><p>The page you are looking for does not exist.</p></body>",
+    );
+  }
+
+  res.write("<body><h2>my Node.js Server!</h2></body>");
   res.write("</html>");
   res.end();
 }
