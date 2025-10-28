@@ -9,6 +9,15 @@ const express = require("express");
 
 const app = express();
 
+app.use((req, res, next) => {
+  console.log("In the middleware 1!");
+  next(); // pass to the next middleware
+});
+
+app.use((req, res, next) => {
+  console.log("In the middleware 2!");
+});
+
 const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
