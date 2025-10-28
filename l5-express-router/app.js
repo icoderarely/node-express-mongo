@@ -16,6 +16,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(userRouter);
 app.use(hostRouter);
 
+app.use((req, res) => {
+  res.status(404).send("<h1>404 Not Found</h1>");
+});
+
 app.server = app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
