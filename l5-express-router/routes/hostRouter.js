@@ -1,20 +1,18 @@
 const express = require("express");
+const path = require("path");
 
 const hostRouter = express.Router();
+const pathDir = require("../utils/pathUtil");
 
-hostRouter.get("/host/form", (req, res) => {
-  res.send(`<form action="/host/submit" method="POST">
-  <label for="hostname">Hostname:</label>
-  <input type="text" id="hostname" name="hostname" required>
-  <button type="submit">Submit</button>
-</form>`);
+hostRouter.get("/form", (req, res) => {
+  // res.sendFile(__dirname + "/../views/hostForm.html");
+  res.sendFile(path.join(pathDir, "views", "hostForm.html"));
 });
 
-hostRouter.post("/host/submit", (req, res) => {
+hostRouter.post("/submit", (req, res) => {
   console.log(req.body);
-  res.send(
-    `<h1>Form Submitted</h1><p>Hostname: ${req.body.hostname}</p><a href="/host/form">Back to Form</a>`,
-  );
+  // res.sendFile(__dirname + "/../views/hostSuccess.html");
+  res.sendFile(path.join(pathDir, "views", "hostSuccess.html"));
 });
 
 module.exports = hostRouter;

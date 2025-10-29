@@ -2,6 +2,7 @@ const express = require("express");
 
 const userRouter = require("./routes/userRouter");
 const hostRouter = require("./routes/hostRouter");
+const pathDir = require("./utils/pathUtil");
 
 const app = express();
 
@@ -14,10 +15,10 @@ app.use((req, res, next) => {
 
 app.use(express.urlencoded({ extended: true }));
 app.use(userRouter);
-app.use(hostRouter);
+app.use("/host", hostRouter);
 
 app.use((req, res) => {
-  res.status(404).send("<h1>404 Not Found</h1>");
+  res.status(404).sendFile(path.join(pathDir, "views", "404.html"));
 });
 
 app.server = app.listen(PORT, () => {
