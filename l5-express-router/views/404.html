@@ -3,11 +3,68 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>404 Page Not Found</title>
-    <link href="" rel="stylesheet" />
+    <title>404 - Page Not Found - Host Manager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="/css/base.css" rel="stylesheet" />
+    <link href="/css/404.css" rel="stylesheet" />
   </head>
   <body>
-    <h1>404 Page Not Found</h1>
-    <a href="/"><button type="button">Go to Home Page</button></a>
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="container">
+        <div class="nav-container">
+          <a href="/" class="nav-brand">🏠 Host Manager</a>
+          <ul class="nav-links">
+            <li><a href="/" class="nav-link">Home</a></li>
+            <li><a href="/host/form" class="nav-link">Add Host</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main">
+      <div class="container">
+        <!-- Hero Section -->
+        <div class="error-hero">
+          <h1>404</h1>
+          <p>Oops! This page seems to have gone missing</p>
+        </div>
+
+        <!-- Error Container -->
+        <div class="error-container">
+          <div class="error-card">
+            <div class="error-icon floating">🔍</div>
+            
+            <h2 class="error-title">Page Not Found</h2>
+            <p class="error-message">
+              Sorry, we couldn't find the page you're looking for. 
+              The page might have been moved, deleted, or you entered the wrong URL.
+            </p>
+
+            <!-- Suggestions -->
+            <div class="error-suggestions">
+              <h3>What you can do:</h3>
+              <ul>
+                <li>Check if the URL is typed correctly</li>
+                <li>Go back to the home page</li>
+                <li>Add a new host to get started</li>
+                <li>Use the navigation menu above</li>
+              </ul>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="error-actions">
+              <a href="/" class="btn-error btn-home">
+                🏠 Go to Home
+              </a>
+              <a href="javascript:history.back()" class="btn-error btn-back">
+                ↩️ Go Back
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
   </body>
 </html>

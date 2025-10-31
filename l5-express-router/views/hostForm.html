@@ -3,14 +3,82 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>HostName Form</title>
-    <link href="" rel="stylesheet" />
+    <title>Add New Host - Host Manager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="/css/base.css" rel="stylesheet" />
+    <link href="/css/form.css" rel="stylesheet" />
   </head>
   <body>
-    <form action="/host/submit" method="POST">
-      <label for="hostname">Hostname:</label>
-      <input type="text" id="hostname" name="hostname" required />
-      <button type="submit">Submit</button>
-    </form>
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="container">
+        <div class="nav-container">
+          <a href="/" class="nav-brand">🏠 Host Manager</a>
+          <ul class="nav-links">
+            <li><a href="/" class="nav-link">Home</a></li>
+            <li><a href="/host/form" class="nav-link active">Add Host</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main">
+      <div class="container">
+        <!-- Hero Section -->
+        <div class="form-hero">
+          <h1>Add New Host</h1>
+          <p>Register a new host to your system</p>
+        </div>
+
+        <!-- Form Container -->
+        <div class="form-container">
+          <div class="form-card">
+            <h2 class="form-title">Host Information</h2>
+            
+            <form action="/host/submit" method="POST" class="form">
+              <div class="form-group">
+                <label for="hostname" class="form-label">🖥️ Hostname</label>
+                <input 
+                  type="text" 
+                  id="hostname" 
+                  name="hostname" 
+                  class="form-input" 
+                  placeholder="Enter hostname (e.g., server-01)"
+                  required 
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="age" class="form-label">📅 Age</label>
+                <input 
+                  type="number" 
+                  id="age" 
+                  name="age" 
+                  class="form-input" 
+                  placeholder="Enter age in years"
+                  min="0"
+                  max="100"
+                  required 
+                />
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn-submit">
+                  ✅ Add Host
+                </button>
+                <a href="/" class="btn btn-secondary">
+                  ↩️ Back to Home
+                </a>
+              </div>
+            </form>
+
+            <div class="form-footer">
+              <p>Need help? <a href="/">Go back to home</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
   </body>
 </html>

@@ -1,12 +1,18 @@
 const express = require("express");
+const path = require("path");
 
 const userRouter = require("./routes/userRouter");
-const hostRouter = require("./routes/hostRouter");
+const { router: hostRouter } = require("./routes/hostRouter");
 const pathDir = require("./utils/pathUtil");
 
 const app = express();
 
 const PORT = 3000;
+
+app.set("view engine", "ejs");
+
+// Serve static files (CSS, images, etc.)
+app.use(express.static(path.join(__dirname, "public")));
 
 app.use((req, res, next) => {
   console.log(`${req.method} ${req.url}`);

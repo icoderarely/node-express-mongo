@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Success - Host Manager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="/css/base.css" rel="stylesheet" />
+    <link href="/css/success.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="container">
+        <div class="nav-container">
+          <a href="/" class="nav-brand">🏠 Host Manager</a>
+          <ul class="nav-links">
+            <li><a href="/" class="nav-link">Home</a></li>
+            <li><a href="/host/form" class="nav-link">Add Host</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main">
+      <div class="container">
+        <!-- Hero Section -->
+        <div class="success-hero">
+          <h1>Success!</h1>
+          <p>Your host has been successfully registered</p>
+        </div>
+
+        <!-- Success Container -->
+        <div class="success-container">
+          <div class="success-card celebration">
+            <div class="success-icon">✅</div>
+            
+            <h2 class="success-title">Host Added Successfully!</h2>
+            <p class="success-message">
+              The host information has been saved to your system.
+            </p>
+
+            <!-- User Details -->
+            <div class="user-details">
+              <h3>Host Details</h3>
+              <div class="detail-row">
+                <span class="detail-label">🖥️ Hostname:</span>
+                <span class="detail-value"><%= host.hostname %></span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">📅 Age:</span>
+                <span class="detail-value"><%= host.age %> years</span>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+              <a href="/" class="btn-action btn-primary-action">
+                🏠 View All Hosts
+              </a>
+              <a href="/host/form" class="btn-action btn-secondary-action">
+                ➕ Add Another Host
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home - Host Manager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="/css/base.css" rel="stylesheet" />
+    <link href="/css/home.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="container">
+        <div class="nav-container">
+          <a href="/" class="nav-brand">🏠 Host Manager</a>
+          <ul class="nav-links">
+            <li><a href="/" class="nav-link active">Home</a></li>
+            <li><a href="/host/form" class="nav-link">Add Host</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main">
+      <div class="container">
+        <!-- Hero Section -->
+        <div class="home-hero">
+          <h1>Welcome to Host Manager</h1>
+          <p>Manage and track all your registered hosts in one place</p>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-number"><%= hosts.length %></span>
+            <div class="stat-label">Total Hosts</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">🌐</span>
+            <div class="stat-label">Active System</div>
+          </div>
+        </div>
+
+        <!-- Users Section -->
+        <div class="users-section">
+          <div class="users-header">
+            <h2 class="users-title">Registered Hosts</h2>
+            <a href="/host/form" class="btn btn-primary">+ Add New Host</a>
+          </div>
+
+          <% if (hosts.length === 0) { %>
+            <div class="empty-state">
+              <div class="empty-state-icon">📋</div>
+              <div class="empty-state-text">No hosts registered yet</div>
+              <a href="/host/form" class="btn btn-primary">Add Your First Host</a>
+            </div>
+          <% } else { %>
+            <% hosts.forEach(function(user) { %>
+              <div class="user-card">
+                <div class="user-info">
+                  <div class="user-name">🖥️ <%= user.hostname %></div>
+                  <div class="user-age">Age: <%= user.age %></div>
+                </div>
+              </div>
+            <% }); %>
+          <% } %>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
