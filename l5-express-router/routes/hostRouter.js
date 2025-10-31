@@ -5,8 +5,7 @@ const hostRouter = express.Router();
 const pathDir = require("../utils/pathUtil");
 
 hostRouter.get("/form", (req, res) => {
-  // res.sendFile(__dirname + "/../views/hostForm.html");
-  res.sendFile(path.join(pathDir, "views", "hostForm.html"));
+  res.render("hostForm");
 });
 
 const hostData = [];

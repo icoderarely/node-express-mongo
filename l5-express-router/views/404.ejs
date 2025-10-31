@@ -1,26 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>404 - Page Not Found - Host Manager</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link href="/css/base.css" rel="stylesheet" />
-    <link href="/css/404.css" rel="stylesheet" />
+    <%- include('partials/head', { pageTitle: '404 - Page Not Found', cssFiles: ['404'] }) %>
   </head>
   <body>
-    <!-- Navigation -->
-    <nav class="nav">
-      <div class="container">
-        <div class="nav-container">
-          <a href="/" class="nav-brand">🏠 Host Manager</a>
-          <ul class="nav-links">
-            <li><a href="/" class="nav-link">Home</a></li>
-            <li><a href="/host/form" class="nav-link">Add Host</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <%- include('partials/navigation', { currentPage: '404' }) %>
 
     <!-- Main Content -->
     <main class="main">

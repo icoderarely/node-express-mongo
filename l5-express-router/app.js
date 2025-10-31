@@ -24,7 +24,7 @@ app.use(userRouter);
 app.use("/host", hostRouter);
 
 app.use((req, res) => {
-  res.status(404).sendFile(path.join(pathDir, "views", "404.html"));
+  res.status(404).render("404");
 });
 
 app.server = app.listen(PORT, () => {
